@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+     "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+<title>EECS 132: Homework Project 2</title>
+</head>
+
+<body>
+<h2>Programming Project 2</h2>
+<h3>Due Friday, March 8 at 11:59pm</h3>
+
+<p><em><strong>IMPORTANT:</strong> Read the
+<strong>Do's and Dont's</strong>
+in the <strong>Course Honor Policy</strong> found on Canvas. </em>
+</p>
+
+<h3>I. Overview</h3>
+
+<p>This second programming assignment is to give you practice writing loops and manipulating strings.  Arrays are not needed, and <em>and you should not
+use arrays in your assignment</em>.</p>
+
+
+
+<h3>II. Code Readability (20% of your project grade)</h3>
+
+<p>As with the last project, you are required to have code that is easy for another person to read and understand.
+To accomplish that, the class will have certain rules about how your code should look.</p>
+
+<p><strong>To receive the full readability marks, your code must follow the following guideline:</strong>
+<ul>
+<li>You should place a comment at the top of the file that contains your name
+and a short description of the purpose of the class.</li>
+<li>You should place a <em>short</em> comment before (directly above) each method describing the method.  The comment should
+be only describe <em>what</em> the method does, not <em>how</em> it does it.  Do not simply copy the descriptions
+below for your comments.</li>
+<li>You should place a short comment directly above each field (should you really have any?)
+indicating the purpose of the variable.</li>
+<li>You should place a short comment above or to the right of each local variable explaining the purpose of the variable.  <em>Variables that are only used as loop indexes do not need to have comments.</em></li>
+<li>You should place a short comment above each loop explaining how the loop works.  Ideally, you should list the goal of the 
+loop, any required precondition for the loop, and if you can, a good iteration subgoal for the loop.</li>
+<li>Any other complicated code such as code the has lots of if statements or variables should contain <em>short</em> comments to help the reader.  The comments can either be above the code fragment or to the right, aligned in a column.</li>
+<li>Remember to use good style: everything should be indented nicely, variables should have good names, there should be a blank line between each method.</li>
+</ul></p>
+
+<hr>
+
+<h3>III. Program Testing Document (20% of your project grade)</h3>
+
+<p>As with the previous project, you are required to submit a document demonstrating that you thoroughly tested your program.
+In this case, it means documenting tests for each of the methods listed below.
+If you are unable to complete a method above, you should still
+describe tests that would test the method had it been completed.</p>
+
+<p>Hints for testing loops.  Your tests need to, at the minimum cover the following cases:
+<ol>
+<li><strong>Test 0, test 1, test many:</strong>  This means you have to test cases where the parameters, if they are integers,
+are 0, 1 or some value other than 1.  If the parameters are strings, you have to test strings of length 0, 1, and more than 1.
+If the strings must contain certain data, you need to test cases where they contain 0, 1, and more than 1 of the desired data.</li>
+<li><strong>Test first, last, and middle:</strong>  In cases where you have to search in or modify a string, you need to test
+cases where the item to be found or modified is the first character of the string, the last character of the string, or somewhere
+in the middle of the string.</li>
+</ol></p>
+
+<p><strong>What must go in the report:</strong> For each method below, your report should describe, in English, what &quot;<em>test 0, 1, many</em>&quot;
+and &quot;<em>test first, middle, last</em>&quot; mean for each of the methods.  Then, you should list the specific tests that you will do, what the expected
+output is, and then (if you completed the method) a cut-and-paste from DrJava showing the actual test. </p>
+
+<p><strong>JUnit</strong>: you will be learning about JUnit soon in a lab.  JUnit will be required for future homeworks, and you are welcome
+to use it with this homework.  If you choose to write JUnit tests for your code,
+you do not need to include the actual tests in your report.  Your JUnit file should include comments with each test that link to the report and indicate what
+you are testing. For example, if your report indicates that the method requires a test with a string of length 0, your JUnit class should have such a test and
+a comment on the test noting that it is the test of a length 0 string that your report described.  Try to organize the JUnit class and report to make it easy for
+a reader to jump back and forth between the report and the tests.</p>
+
+<hr>
+
+
+<h3>IV. Java Programming (60% of your grade)</h3>
+
+<p><strong>Guidelines for the program</strong>:
+<ul>
+<li>All methods listed below must be <tt>public</tt> and <tt>static</tt>.</li>
+<li>If your code is using a loop to modify or create a string, you need to use the <tt>StringBuilder</tt> class from the API.</li>
+<li>Keep the loops simple but also efficient.  Remember that you want each loop to do only one "task" while also avoiding unnecessary traversals of the data.</li>
+<li>No additional methods are needed.  
+However, you may write additional <em>private</em> helper methods, but you still need to have efficient and simple algorithms. Do not write helper methods that do a significant number of <em>unnecessary</em>
+traversals of the data.</li>
+<li><strong><em>Important</em></strong>: you must not use either <tt>break</tt> or <tt>continue</tt> in your code.  These two commands almost always are used to compensate for
+a poorly designed loop.  Likewise, you must not write code that mimics what <tt>break</tt> does.  Instead, re-write your loop so that the loop logic does not need break-type behavior.</li>
+<li>While it may be tempting to hunt through the API to find classes and methods that can shorten your code, you may not
+do that.  The first reason is that this homework is an exercise in writing loops, not in using the API.  The second reason is that in a lot of cases, the API methods may shorten the <em>writing</em> of your code but increase its <em>running time</em>.
+The only classes and methods you can use are listed below.  Note: if a method you want to use from the API is not listed, you should <em>not</em> implement the method yourself so you can use it.
+Rather, you shoud look for the solution that does not need that method.</p>
+
+<p>You <em>are allowed</em> to use the following from the Java API:
+<ul><li>class String
+    <ul><li>length</li>
+        <li>charAt</li>
+   </ul></li>
+   <li>class StringBuilder
+   <ul><li>length</li>
+       <li>charAt</li>
+       <li>append</li>
+       <li>toString</li>
+   </ul></li>
+   <li>class Character
+    <ul><li>any method</li>
+   </ul></li>
+</ul>
+</p>
+</ul>
+</p>
+
+<p>Create a class called <tt>HW2</tt> that contains the following methods:
+<ol>
+<li><p><tt>onlyEnglishLetters</tt> takes a <tt>String</tt> as input and returns a <tt>boolean</tt>:<br>
+The method should return <tt>true</tt> if every character in the input string is an English letter.  It should return
+<tt>false</tt> if there exists a character that is not an English letter.
+<pre>
+> HW2.onlyEnglishLetters("abDkfdoFRs")
+true
+> HW2.onlyEnglishLetters("lFKe5aaa")
+false
+<pre>
+</p></li>
+
+<li><p><tt>replaceKth</tt> takes two <tt>char</tt>s, an <tt>int</tt> and a <tt>String</tt> as input and returns a <tt>String</tt>:<br>
+The <tt>int</tt> input represents a number <em>k</em>, and the method should replace the <em>k</em>th occurrence of the first <tt>char</tt> input with the second <tt>char</tt> input.
+If the first <tt>char</tt> does not occur at least <em>k</em> times, then nothing is replaced.
+<pre>
+> HW2.replaceKth('a', 'x', 3, "abcaaa")
+"abcaxa"
+> HW2.replaceKth('a', 'x', 6, "aaaaa")
+"aaaaa"
+<pre>
+</p></li>
+
+<li><p><tt>interleave</tt> takes two <tt>String</tt>s as input and returns a <tt>String</tt>:<br>
+The output should have the first character of the first input string followed by the first character of the second input string, and then the second character of the first
+string followed by the second character of the second string.  If one string has fewer characters than the other, the rest of the characters of the longer string should
+appear at the end of the output.
+<pre>
+> HW2.interleave("abcde", "ABC")
+"aAbBcCde"
+</pre>
+</p></li>
+
+<li><p><tt>blankWords</tt> takes a <tt>String</tt>s as input and returns a <tt>String</tt>:<br>
+Any word of the input (here a word is defined to be consecutive letters) has all but the first and last letters replaced by the <tt>'_'</tt> character.
+<pre>
+HW2.blankWords("This is a Test.")
+"T__s is a T__t."
+</pre>
+</p>
+</li>
+
+<li><p><tt>nthWord</tt> takes an <tt>int</tt> and a <tt>String</tt> as input and returns a <tt>String</tt>:<br>
+The input <tt>int</tt> represents a number <em>n</em> that is assumed to be positive, and the output string contains every <em>nth</em> word of the input string, 
+starting with the first word, separated by a single space.
+{\em For this method, a word is defined to be a sequence of non-space characters.}
+There should be no space at the end of the output string.
+<pre>
+> HW2.nthWord(3, "zero one    two  three four five six seven")
+"zero three six"
+</pre>
+</p></li>
+
+<li><p><tt>truncateAfter</tt> takes an <tt>int</tt> and a <tt>String</tt> as input and returns a <tt>String</tt>:<br>
+The input string may contain hyphens and spaces that mark appropriate places to truncate the string.  
+The output string will be a truncated version of the input string, and
+the input <tt>int</tt> value is the desired length of the output string.  
+The output string should truncate the input string at the first legal spot such that the output string will have at least the desired length.
+If the truncation happens at a space, the space is not included in the output, but if the truncation happens at a hyphen, the hyphen
+is included.  No other hyphens are included in the output, but the other spaces are. (If the input string does not have enough
+characters to meet the desired minimum, then the output should be the entire input string without the hyphens.)
+<pre>
+> HW2.truncateAfter(5, "La-te-ly the-re.")
+"Late-"
+> HW2.truncateAfter(6, "La-te-ly the-re.")
+"Lately"
+> HW2.truncateAfter(7, "La-te-ly the-re.")
+"Lately the-"
+</pre>
+</p></li>
+
+
+<li><p><strong>Extra Credit:</strong> <tt>truncateBefore</tt>: the same as the <tt>truncateAfter</tt> method, but now the input <tt>int</tt> value is the
+<em>maximum</em>, and the string should be truncated at the latest possible point such that the resulting string has no more than the desired length.</p></li>
+
+</ol></p>
+
+<hr>
+
+<h3>V. Submitting Your Project</h3>
+<p>Submit the <tt>.java</tt> file (not the <tt>.class</tt> files or the <tt>.java~</tt> files) 
+of your class plus the testing report on Canvas.</p>
+
+</body>
+
+</html>
+
